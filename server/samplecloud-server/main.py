@@ -11,7 +11,7 @@ api = Api(app)
 
 # About API components
 api.add_resource(about.Project, "/about/project")
-api.add_resource(about.Version, "/about/version")
+api.add_resource(about.Release, "/about/release")
 api.add_resource(about.Maintainer, "/about/author")
 
 # Samples API components

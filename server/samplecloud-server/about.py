@@ -8,7 +8,7 @@ class Project(Resource):
     def get(self):
         return project.info
 
-class Version(Resource):
+class Release(Resource):
 
     def get(self):
         return project.release
