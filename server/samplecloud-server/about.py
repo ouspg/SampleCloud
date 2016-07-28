@@ -1,29 +1,19 @@
 from flask import Flask
 from flask_restful import Resource
 
-from __init__ import __version__
-
-class Version(Resource):
-
-    def get(self):
-        return __version__
+import project
 
 class Project(Resource):
 
     def get(self):
+        return project.info
 
-        project_description = "SampleCloud is an api centric web application for sharing \
-                                sample arhive files for software fuzzing purposes."
-
-        return project_description
-
-class Author(Resource):
+class Version(Resource):
 
     def get(self):
+        return project.release
 
-        author_info = {
-            name: "Pauli Huttunen",
-            nick: "WhiteEyeDoll"
-        }
+class Maintainer(Resource):
 
-        return author_info
+    def get(self):
+        return project.maintainer

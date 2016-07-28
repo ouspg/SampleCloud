@@ -10,9 +10,9 @@ app = Flask("samplecloud-server")
 api = Api(app)
 
 # About API components
-api.add_resource(about.Version, "/about/version")
 api.add_resource(about.Project, "/about/project")
-api.add_resource(about.Author, "/about/author")
+api.add_resource(about.Version, "/about/version")
+api.add_resource(about.Maintainer, "/about/author")
 
 # Samples API components
 api.add_resource(samples.Find, "/samples/find")
