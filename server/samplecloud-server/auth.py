@@ -3,7 +3,10 @@ from flask_restful import Resource
 
 class Normal(Resource):
 
+    def get(self):
+        return "This api will authenticate users with a username/password combination."
+
 class Token(Resource):
 
-    def get(self, token):
-        return "This function will authenticate an user with a token."
+    def get(self):
+        return "This api will authenticate users with a token."

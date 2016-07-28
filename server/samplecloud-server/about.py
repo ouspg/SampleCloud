@@ -14,6 +14,7 @@ class Project(Resource):
 
         project_description = "SampleCloud is an api centric web application for sharing \
                                 sample arhive files for software fuzzing purposes."
+
         return project_description
 
 class Author(Resource):

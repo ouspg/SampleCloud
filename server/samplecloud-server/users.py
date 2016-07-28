@@ -3,16 +3,25 @@ from flask_restful import Resource
 
 class Create(Resource):
 
-    def post(self, username, passwd):
-        return "This fuction will be used for user creation."
+    def get(self):
+        return "This api will be used for user creation."
 
 class Delete(Resource):
 
-    def delete(self, username):
-        return "This function will be used for user deletion."
+    def get(self):
+        return "This api will be used for user deletion."
 
-class Modify(Resource):
+class Query(Resource):
 
-class Activate(Resource):
+    def get(self):
+        return "This api will be used to query user information."
 
-class Deactivate(Resource):
+class UpdatePassword(Resource):
+
+    def get(self):
+        return "This api will be used to change user password"
+
+class Status(Resource):
+
+    def get(self):
+        return "This function will be used to activate, freeze, and ban users."
