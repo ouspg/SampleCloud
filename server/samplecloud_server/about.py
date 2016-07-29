@@ -1,23 +1,21 @@
 from flask import Flask
 from flask_restful import Resource
 
-import package
+import package_about, system_about
 
-categories = {
-    "package": package.pkg
+modules = {
+    "package": package_about.about,
+    "system": system_about.about
 }
 
-class Category(Resource):
+class CategoryView(Resource):
 
-    def get(self, category):
-        return categories[category]
+    def get(self, module, category):
 
-class SubCategory(Resource):
+        return modules[module][category]
 
-    def get(self, category, subcategory):
-        return categories[category][subcategory]
+class ValueView(Resource):
 
-class SubCategoryValue(Resource):
+    def get(self, module, category, value):
 
-    def get(self, category, subcategory, value):
-        return categories[category][subcategory][value]
+        return modules[module][category][value]
