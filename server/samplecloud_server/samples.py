@@ -1,27 +1,38 @@
 from flask import Flask
 from flask_restful import Resource
 
-class Find(Resource):
+class Search(Resource):
+    """Search for samples that match given parameters"""
 
     def get(self):
-        return "This api will return info for sample arhives that match the search pattern."
+        return
 
-class Info(Resource):
+class Show(Resource):
+    """Show metadata information of a sample by id"""
 
-    def get(self):
-        return "This api shows metadata for the give sample ID."
-
-class Download(Resource):
-
-    def get(self):
-        return "This api will return a sample archive file for the given ID."
+    def get(self, sample_id):
+        return
 
 class Upload(Resource):
+    """Upload a sample and apply give metadata to it"""
 
-    def get(self):
-        return "This api will upload an sample archive file and applies provided metadata to it."
+    def post(self):
+        return
+
+class Download(Resource):
+    """Download a sample archive file by id"""
+
+    def get(self, sample_id):
+        return
 
 class Edit(Resource):
+    """Edit a sample metadata by id"""
 
-    def get(self):
-        return "This api will be used to edit sample archive file metadata."
+    def put(self):
+        return
+
+class Delete(Resource):
+    """Delete a sample by id"""
+
+    def delete(self, sample_id):
+        return
