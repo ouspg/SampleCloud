@@ -5,7 +5,7 @@ about = {}
 
 about["info"] = {
     "name": "SampleCloud",
-    "description": "SampleCloud is an api centric web application for sharing sample arhive files for software fuzzing purposes.",
+    "description": "SampleCloud web api component.",
     "url": "https://github.com/ouspg/SampleCloud"
 }
 
@@ -19,7 +19,7 @@ about["release"] = {
 
 # Maintainer information
 
-about["maintainer"] = {
+about["author"] = {
     "name": "Pauli Huttunen",
     "nick": "WhiteEyeDoll",
     "url": "https://github.com/WhiteEyeDoll"

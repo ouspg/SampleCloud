@@ -1,12 +1,13 @@
 from setuptools import setup
-from .samplecloud-server import app_info
+from samplecloudwebapi import package_about
 
 setup(
-    name = "samplecloud-api-server",
-    version = app_info.release_info["release_version"],
-    author = app_info.maintainer_info["maintainer_name"],
-    description = app_info.project_info["project_description"],
+    name = "samplecloudwebapi",
+    version = package_about.about["release"]["version"],
+    author = package_about.about["author"]["name"],
+    description = package_about.about["info"]["description"],
     license = "MIT",
     url = "https://github.com/ouspg/SampleCloud",
-    packages=['samplecloud-api', 'tests'],
+    packages=["samplecloudwebapi", "tests"],
 )
+
