@@ -15,8 +15,8 @@ Version number if versioned.
 (ex. 0.1.2)
 
 ##### Date
-Date in DD-MM-YYYY format when the sample set was created.  
-(ex. 24-8-2016)
+Date when the sample set was created.  
+(ex. 2016-24-08)
 
 ##### Status
 Status of the sample set.  
