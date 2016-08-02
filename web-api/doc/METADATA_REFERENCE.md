@@ -25,3 +25,7 @@ Status of the sample set.
 ##### Size
 Size of the sample set.  
 (ex. 2.48GB)
+
+##### URL
+Download URL for the sampleset
+(ex. https://samplecloud.ouspg.org/samples/id/12345678)
