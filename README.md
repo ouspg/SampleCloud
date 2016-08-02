@@ -1,7 +1,7 @@
 # SampleCloud
 
 SampleCloud experiments with the ways to provide people who fuzz
-with good quality sample corpus. We also try to find a way to make
+with good quality sample sets, also known as corpus. We also try to find a way to make
 contributing back to the pool possible.
 
 ## References
