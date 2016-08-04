@@ -6,7 +6,7 @@ contributing back to the pool possible.
 
 ## Samples
 
-At the first stages of the project we will be gathering a static list of good sample sets already provided by third parties. If you are aware of any good existing sets not yet included in the list, please create an issue and include links to the project pages at our GitHub issue tracker and we will add them to the list. You can find the current sample list [here](http://samplecloud.ouspg.org/samples.html).
+At the first stages of the project we will be gathering a static list of good sample sets already provided by third parties. If you are aware of any good existing sets not yet included in the list, please create an issue and include links to the project pages at our [GitHub issue tracker](https://github.com/ouspg/SampleCloud/issues) and we will add them to the list. You can find the current sample list [here](http://samplecloud.ouspg.org/samples.html).
 
 ## References
 
