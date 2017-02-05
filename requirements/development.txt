@@ -3,3 +3,4 @@ coreapi
 coreapi-cli
 markdown
 drfdocs
+mkdocs
