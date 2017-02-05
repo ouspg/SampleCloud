@@ -1,0 +1,10 @@
+site_name: SampleCloud
+
+repo_url: https://github.com/ouspg/SampleCloud
+
+site_author: Pauli Huttunen
+
+pages:
+        - 'Home': 'index.md'
+        - 'About': 'about.md'
+        - 'Changelog': 'changelog.md'
