@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework_docs',
     'samplecloud.backend',
     'samplecloud.frontend',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += 'rest_framework_docs'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
