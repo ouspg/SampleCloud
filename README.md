@@ -1,5 +1,7 @@
 # SampleCloud
 
+[![Build Status](https://travis-ci.org/WhiteEyeDoll/SampleCloud.svg?branch=master)](https://travis-ci.org/WhiteEyeDoll/SampleCloud)
+
 SampleCloud experiments with the ways to provide people who fuzz
 with good quality sample sets, also known as corpus. We also try to find a way to make
 contributing back to the pool possible.
