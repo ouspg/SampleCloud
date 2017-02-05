@@ -9,6 +9,10 @@ contributing back to the pool possible.
 The project uses [Django](https://www.djangoproject.com/) and [Django REST framework](http://www.django-rest-framework.org/) and
 consists of separated backend and frontend applications.
 
+## Documentation
+
+Documentation is included in the [docs/](docks/) directory and is autobuilt/hosted
+by using [MkDocs](http://www.mkdocs.org/) and [Read the Docs](https://readthedocs.org/) at [here](http://samplecloud.readthedocs.io/en/latest/).
 
 ## Contributors
 
