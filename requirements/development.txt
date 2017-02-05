@@ -1,0 +1,5 @@
+-r minimal.txt
+coreapi
+coreapi-cli
+markdown
+drfdocs
