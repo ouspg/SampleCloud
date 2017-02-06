@@ -4,3 +4,6 @@ coreapi-cli
 markdown
 drfdocs
 mkdocs
+pylint
+coverage
+tox
