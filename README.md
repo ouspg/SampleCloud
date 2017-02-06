@@ -1,6 +1,7 @@
 # SampleCloud
 
 [![Build Status](https://travis-ci.org/WhiteEyeDoll/SampleCloud.svg?branch=master)](https://travis-ci.org/WhiteEyeDoll/SampleCloud)
+[![Coverage Status](https://coveralls.io/repos/github/WhiteEyeDoll/SampleCloud/badge.svg?branch=master)](https://coveralls.io/github/WhiteEyeDoll/SampleCloud?branch=master)
 
 SampleCloud experiments with the ways to provide people who fuzz
 with good quality sample sets, also known as corpus. We also try to find a way to make
