@@ -13,6 +13,7 @@ class Profile(models.Model):
     nickname = models.CharField(max_length=40)
     bio = models.CharField(max_length=500)
 
+
 class Project(models.Model):
 
     """
@@ -24,14 +25,17 @@ class Project(models.Model):
     members = models.ManyToManyField(User)
     bio = models.CharField(max_length=500)
 
+
 class Sampleset(models.Model):
 
     """
     Class for identifying a sampleset.
     """
 
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, null=True)
     name = models.CharField(max_length=40)
+
 
 class SamplesetVersion(models.Model):
 
@@ -39,11 +43,10 @@ class SamplesetVersion(models.Model):
     Class for storing a single uploaded version of a sampleset.
     """
 
-    sampleset = models.ForeignKey(Sampleset)
+    sampleset = models.ForeignKey(Sampleset, on_delete=models.CASCADE)
     version = models.CharField(max_length=40)
-    author = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(upload_to="samples/")
+    file = models.FileField(upload_to="samples/{}/".format(sampleset.name))
 
 
 class SamplesetCollection(models.Model):
@@ -53,6 +56,6 @@ class SamplesetCollection(models.Model):
     Useful for grouping relevant samplesets together (ex. by topic) for easier viewing and sharing.
     """
 
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     samplesets = models.ManyToManyField(Sampleset)

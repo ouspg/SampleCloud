@@ -3,17 +3,18 @@ from rest_framework.routers import DefaultRouter
 from samplecloud.backend import views
 from django.conf import settings
 
+
 app_name = "backend"
 
 router = DefaultRouter(trailing_slash=False)
 
+router.register(r'^users/', views.UserViewSet)
 router.register(r'^profiles/', views.ProfileViewSet)
 
 urlpatterns = [
     url(r'^schema$', views.schema_view),
-    url(r'', include(router.urls)),
+    url(r'^', include(router.urls)),
 ]
-
 
 # If drfdocs is in installed apps, add urls for api documentation
 
