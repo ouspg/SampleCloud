@@ -7,3 +7,4 @@ samplecloud.egg-info
 .coverage
 .tox
 site
+.idea
