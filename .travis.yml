@@ -7,7 +7,7 @@ install:
   - pip install coveralls
 
 script:
-    - coverage run --source=samplecloud manage.py test -v 2s
+    - coverage run --source=samplecloud manage.py test -v 2
     - mkdocs build
 
 after_success:
