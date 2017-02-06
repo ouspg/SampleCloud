@@ -3,12 +3,11 @@ python:
   - 3.6
 
 install:
-  - pip install -r requirements/development.txt
+  - pip install tox
   - pip install coveralls
 
 script:
-    - coverage run --source=samplecloud manage.py test -v 2
-    - mkdocs build
+    - tox
 
 after_success:
   - coveralls

@@ -32,16 +32,6 @@ setup(
 
     install_requires=['django', 'djangorestframework'],
 
-    extras_require={
-        'dev': ['coreapi',
-                'coreapi-cli',
-                'mkdocs',
-                'drfdocs',
-                'markdown',
-                ],
-
-    },
-
     package_data={
         'frontend': ['templates/*.html'],
     },

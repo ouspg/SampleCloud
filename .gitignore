@@ -4,3 +4,6 @@ db.sqlite3
 build
 dist
 samplecloud.egg-info
+.coverage
+.tox
+site
