@@ -14,8 +14,7 @@ consists of separated backend and frontend applications.
 
 ## Documentation
 
-Documentation is included in the [docs/](docks) directory and is autobuilt/hosted
-by using [MkDocs](http://www.mkdocs.org/) and [Read the Docs](https://readthedocs.org/) at [here](http://samplecloud.readthedocs.io/en/latest/).
+Documentation is autobuilt/hosted by using [MkDocs](http://www.mkdocs.org/) and [Read the Docs](https://readthedocs.org/) at [here](http://samplecloud.readthedocs.io/en/latest/).
 
 ## Contributors
 
