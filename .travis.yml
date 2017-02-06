@@ -20,7 +20,7 @@ script:
     - tox
 
 after_success:
-    - codecov -e TOXENV
+    - codecov
 
 notifications:
   email: false
