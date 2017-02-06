@@ -1,6 +1,0 @@
--r required.txt
-pylint
-markdown
-drfdocs
-coreapi
-coreapi-cli
