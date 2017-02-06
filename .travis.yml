@@ -1,5 +1,14 @@
 language: python
 python:
-  - "3.6"
+  - 3.6
 
-install: "pip install -r requirements/development.txt"
+install:
+  - pip install -r requirements/development.txt
+  - pip install coveralls
+
+script:
+    - coverage run --source=samplecloud manage.py test -v 2s
+    - mkdocs build
+
+after_success:
+  - coveralls
