@@ -7,11 +7,20 @@ python:
   - 3.5
   - 3.6
 
+matrix:
+  fast_finish: true
+  include:
+    - python: 3.6
+      env: TOXENV="docs"
+
 install:
-  - pip install tox-travis
+  - pip install tox tox-travis codecov
 
 script:
     - tox
+
+after_success:
+    - codecov -e TOXENV
 
 notifications:
   email: false
