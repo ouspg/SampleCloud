@@ -17,8 +17,8 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from samplecloud.backend import urls as be_urls
-from samplecloud.frontend import urls as fe_urls
+from samplecloud.api import urls as be_urls
+from samplecloud.ui import urls as fe_urls
 
 
 urlpatterns = [

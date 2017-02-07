@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User, Group
-from samplecloud.backend.models import Sampleset, Profile
+from samplecloud.api.models import Sampleset, Profile
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.response import Response
 from rest_framework import renderers
 from rest_framework import schemas
-from samplecloud.backend import serializers
+from samplecloud.api import serializers
 
 
 class UserViewSet(viewsets.ModelViewSet):

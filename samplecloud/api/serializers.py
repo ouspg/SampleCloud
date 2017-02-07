@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User, Group
-from samplecloud.backend.models import Sampleset, Profile
+from samplecloud.api.models import Sampleset, Profile
 
 
 class UserSerializer(serializers.Serializer):

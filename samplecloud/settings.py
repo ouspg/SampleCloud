@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'samplecloud.backend',
-    'samplecloud.frontend',
+    'samplecloud.api',
+    'samplecloud.ui',
 ]
 
 REST_FRAMEWORK = {

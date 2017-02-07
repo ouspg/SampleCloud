@@ -8,3 +8,4 @@ samplecloud.egg-info
 .tox
 site
 .idea
+*_initial.py

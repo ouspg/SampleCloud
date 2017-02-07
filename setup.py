@@ -28,12 +28,12 @@ setup(
 
     keywords='development fuzzing',
 
-    packages=['samplecloud', 'samplecloud.backend', 'samplecloud.frontend'],
+    packages=['samplecloud', 'samplecloud.api', 'samplecloud.ui'],
 
     install_requires=['django', 'djangorestframework'],
 
     package_data={
-        'frontend': ['templates/*.html'],
+        'ui': ['templates/*.html'],
     },
 
     entry_points={
