@@ -17,12 +17,12 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from samplecloud.api import urls as be_urls
-from samplecloud.ui import urls as fe_urls
+from samplecloud.api import urls as api_urls
+from samplecloud.ui import urls as ui_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(be_urls)),
-    url(r'^', include(fe_urls)),
+    url(r'^api/', include(api_urls)),
+    url(r'^', include(ui_urls)),
 ]

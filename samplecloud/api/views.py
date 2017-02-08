@@ -37,7 +37,7 @@ class SamplesetViewSet(viewsets.ModelViewSet):
     @detail_route(methods=['GET', 'POST', 'DELETE'])
     def version_detail(self, request, pk=None):
 
-        pass
+        pass    
 
 
 @api_view()
