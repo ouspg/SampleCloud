@@ -1,27 +1,33 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User, Group
-from samplecloud.api.models import Sampleset, Profile
+from django.contrib.auth.models import User
+from samplecloud.api.models import Sampleset, SamplesetVersion
 
 
-class UserSerializer(serializers.Serializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+    samplesets = serializers.HyperlinkedIdentityField(view_name="sampleset-details", many=True)
 
     class Meta:
 
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name')
+        fields = ('url', 'id','username', 'email', 'first_name', 'last_name', 'password', 'samplesets')
+        extra_kwargs = {'password': {'write_only': True}}
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class SamplesetSerializer(serializers.HyperlinkedModelSerializer):
 
-    class Meta:
-
-        model = Profile
-        fields = ('__all__')
-
-
-class SamplesetSerializer(serializers.ModelSerializer):
+    versions = serializers.HyperlinkedIdentityField(view_name="samplesetversion-details", many=True)
 
     class Meta:
 
         model = Sampleset
-        fields = ('__all__')
+        fields = ('url', 'id', 'name', 'author', 'versions')
+
+class SamplesetVersionSerializer(serializers.HyperlinkedModelSerializer):
+
+    sampleset = serializers.ReadOnlyField(source="sampleset.name")
+
+    class Meta:
+
+        model = SamplesetVersion
+        fields = ('url', 'id', 'version', 'sampleset', 'file')

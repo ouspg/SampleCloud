@@ -32,7 +32,7 @@ class Sampleset(models.Model):
     Class for identifying a sampleset.
     """
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, related_name='samplesets', on_delete=models.CASCADE)
     project = models.ForeignKey(Project, null=True)
     name = models.CharField(max_length=40)
 
@@ -43,7 +43,7 @@ class SamplesetVersion(models.Model):
     Class for storing a single uploaded version of a sampleset.
     """
 
-    sampleset = models.ForeignKey(Sampleset, on_delete=models.CASCADE)
+    sampleset = models.ForeignKey(Sampleset, related_name="versions", on_delete=models.CASCADE)
     version = models.CharField(max_length=40)
     created = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to="samples/{}/".format(sampleset.name))
