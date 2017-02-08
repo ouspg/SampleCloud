@@ -1,15 +1,24 @@
 from django.db import models
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import AbstractUser, Group
+from django.conf import settings
+
+class User(AbstractUser):
+
+    """
+    Custom User class for possible future exetensios.
+    """
+
+    pass
 
 
-class Profile(models.Model):
+class UserProfile(models.Model):
 
     """
     Profile class to compliment the User class.
     Includes profile info and settings.
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     nickname = models.CharField(max_length=40)
     bio = models.CharField(max_length=500)
 
@@ -22,7 +31,7 @@ class Project(models.Model):
     """
 
     group = models.OneToOneField(Group)
-    members = models.ManyToManyField(User)
+    members = models.ManyToManyField(settings.AUTH_USER_MODEL)
     bio = models.CharField(max_length=500)
 
 
@@ -32,9 +41,9 @@ class Sampleset(models.Model):
     Class for identifying a sampleset.
     """
 
-    author = models.ForeignKey(User, related_name='samplesets', on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='samplesets', on_delete=models.CASCADE)
     project = models.ForeignKey(Project, null=True)
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=40, unique=True)
 
 
 class SamplesetVersion(models.Model):
@@ -56,6 +65,6 @@ class SamplesetCollection(models.Model):
     Useful for grouping relevant samplesets together (ex. by topic) for easier viewing and sharing.
     """
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     samplesets = models.ManyToManyField(Sampleset)
