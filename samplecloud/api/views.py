@@ -8,6 +8,7 @@ from rest_framework import renderers
 from rest_framework import schemas
 from samplecloud.api import serializers
 from django.contrib.auth import get_user_model
+from rest_framework.decorators import detail_route, list_route
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -23,11 +24,20 @@ class SamplesetViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.SamplesetSerializer
 
-class SamplesetVersionViewSet(viewsets.ModelViewSet):
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
 
-    queryset = SamplesetVersion.objects.all()
+    @list_route()
+    def version_list(self, request):
 
-    serializer_class = serializers.SamplesetVersionSerializer
+        sampleset = self.get_object()
+
+        return Response(sampleset.versions)
+
+    @detail_route(methods=['GET', 'POST', 'DELETE'])
+    def version_detail(self, request, pk=None):
+
+        pass
 
 
 @api_view()

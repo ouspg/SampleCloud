@@ -10,8 +10,6 @@ router = DefaultRouter(trailing_slash=False)
 
 router.register(r'users', views.UserViewSet)
 router.register(r'samplesets', views.SamplesetViewSet)
-router.register(r'versions', views.SamplesetVersionViewSet)
-
 
 urlpatterns = format_suffix_patterns([
     url(r'^schema$', views.schema_view),
