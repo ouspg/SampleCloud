@@ -17,6 +17,16 @@ class UserViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.UserSerializer
 
+    @detail_route(methods=['GET', 'POST'])
+    def profile(self, request):
+
+        # TODO: user profile endpoint
+
+        #user = self.get_object()
+
+        #return Response(user.profile)
+        pass
+
 
 class SamplesetViewSet(viewsets.ModelViewSet):
 
@@ -33,6 +43,8 @@ class SamplesetViewSet(viewsets.ModelViewSet):
         """
         Manage versions of the sampleset.
         """
+
+        # TODO: sampleset versions endpoint
         pass
 
 
