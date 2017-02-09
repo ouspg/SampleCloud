@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/WhiteEyeDoll/SampleCloud.svg?branch=master)](https://travis-ci.org/WhiteEyeDoll/SampleCloud)
 [![codecov](https://codecov.io/gh/WhiteEyeDoll/SampleCloud/branch/master/graph/badge.svg)](https://codecov.io/gh/WhiteEyeDoll/SampleCloud)
+[![Documentation Status](https://readthedocs.org/projects/samplecloud/badge/?version=latest)](http://samplecloud.readthedocs.io/en/latest/?badge=latest)
 
 SampleCloud experiments with the ways to provide people who fuzz
 with good quality sample sets, also known as corpus. We also try to find a way to make
