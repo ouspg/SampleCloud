@@ -43,7 +43,9 @@ class Sampleset(models.Model):
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='samplesets', on_delete=models.CASCADE)
     project = models.ForeignKey(Project, null=True)
+    created = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=40, unique=True)
+    description = models.CharField(max_length=200)
 
 
 class SamplesetVersion(models.Model):
@@ -56,6 +58,7 @@ class SamplesetVersion(models.Model):
     version = models.CharField(max_length=40)
     created = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to="samples/{}/".format(sampleset.name))
+    notes = models.CharField(max_length=200)
 
 
 class SamplesetCollection(models.Model):

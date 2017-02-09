@@ -10,24 +10,25 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
 
         model = get_user_model()
-        fields = ('url', 'id','username', 'email', 'first_name', 'last_name', 'password', 'samplesets')
+        fields = ('url','username', 'email', 'first_name', 'last_name', 'password', 'samplesets')
         extra_kwargs = {'password': {'write_only': True}}
 
 
-class SamplesetSerializer(serializers.HyperlinkedModelSerializer):
+class SamplesetVersionSerializer(serializers.ModelSerializer):
 
-    versions = serializers.HyperlinkedRelatedField(view_name="sampleset-version-detail", many=True, read_only=True)
-
-    class Meta:
-
-        model = Sampleset
-        fields = ('url', 'id', 'name', 'author', 'versions')
-
-class SamplesetVersionSerializer(serializers.HyperlinkedModelSerializer):
-
-    sampleset = serializers.HyperlinkedRelatedField(view_name="sampleset-details", read_only=True)
 
     class Meta:
 
         model = SamplesetVersion
-        fields = ('url', 'id', 'version', 'sampleset', 'file')
+        fields = ('version', 'notes', 'created', 'file')
+
+
+class SamplesetSerializer(serializers.HyperlinkedModelSerializer):
+
+    versions = SamplesetVersionSerializer
+
+    class Meta:
+
+        model = Sampleset
+        fields = ('url', 'name', 'description', 'author', 'versions')
+        extra_kwargs = {'versions': {'read_only': True}}

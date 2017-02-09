@@ -9,7 +9,7 @@ import rest_framework.urls
 router = DefaultRouter(trailing_slash=False)
 
 router.register(r'users', views.UserViewSet)
-router.register(r'samplesets', views.SamplesetViewSet)
+router.register(r'samples/sets', views.SamplesetViewSet)
 
 urlpatterns = format_suffix_patterns([
     url(r'^schema$', views.schema_view),
@@ -20,8 +20,8 @@ urlpatterns += (url(r'', include(router.urls)),)
 #urlpatterns += (url(r'admin/', include(rest_framework.urls)),)
 
 
-# If drfdocs is in installed apps, add urls for api documentation
+# If drfdocs is in installed apps and debugging is enabled, add urls for api documentation
 
-if "rest_framework_docs" in settings.INSTALLED_APPS:
+if "rest_framework_docs" in settings.INSTALLED_APPS and settings.DEBUG:
 
     urlpatterns += [url(r'docs/', include("rest_framework_docs.urls"))]

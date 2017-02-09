@@ -27,17 +27,13 @@ class SamplesetViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-    @list_route()
-    def version_list(self, request):
-
-        sampleset = self.get_object()
-
-        return Response(sampleset.versions)
-
     @detail_route(methods=['GET', 'POST', 'DELETE'])
-    def version_detail(self, request, pk=None):
+    def versions(self, request):
 
-        pass    
+        """
+        Manage versions of the sampleset.
+        """
+        pass
 
 
 @api_view()
